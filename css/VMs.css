@@ -93,6 +93,17 @@
 	font-weight: bold;
 	transition: 0.8s;
 }
+#pdf,#excel,#pdf img,#excel img{
+	height: 60px;
+	width: 60px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background: none;
+}
+#pdf, #excel{
+	margin-left: 30px;
+}
 #reload{
 	width: 150px;
 	margin-left: 30px;
@@ -334,7 +345,7 @@ input[type="checkbox"]{
 #inner div{
 	display: flex;
 	flex-direction: row;
-	padding: 30px;
+	margin: 30px;
 }
 #inner p{
 	padding: 20px 50px;
@@ -342,12 +353,13 @@ input[type="checkbox"]{
 	font-size: 16px;
 }
 #inner label{
-	margin-left: 20px;
+	margin: 5px 20px;
 }
 #inner div input{
 	margin-left: 20px;
 	width: 70px;
 	text-align: center;
+	padding: 5px;
 }
 #inner button{
 	width: 100px;
@@ -359,7 +371,7 @@ input[type="checkbox"]{
 #close{
 	position: absolute;
 	top: 10px;
-	right: 0;
+	right: 10px;
 	font-size: 25px;
 	border: none;
 	outline: none;
@@ -367,6 +379,7 @@ input[type="checkbox"]{
 	color: #676767;
 	width: 40px;
 	height: 40px;
+	cursor: pointer;
 }
 #close:hover{
 	color: black;
@@ -405,4 +418,106 @@ input[type="checkbox"]{
 	left: 50%;
 	transform: translateX(-50%);
 	padding: 30;x
+}
+
+/*test*/
+.test{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 306px;
+	left: 0;
+	right: 0;
+}
+.test a{
+	background-color: inherit;
+	color: white;
+	height: 60px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	border-bottom: 1px solid #e3e3e3;
+	line-height: 60px;
+	text-align: center;
+}
+.test a:hover{
+	background-color: #8b685f;
+}
+.container h1{
+	text-align: center;
+	padding: 20px;
+}
+#inner2{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: auto;
+	transform: translate(-50%,-50%);
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+}
+#inner2 h1{
+	
+	margin: 40px auto;
+	border-left: 5px solid black;
+	padding: 5px 10px;
+	font-size: 22px;
+	background-color: #FAD02C;
+}
+#addVM{
+	height: 50px;
+	width: 50px;
+	font-size: 35px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: #FAD02C;
+	color: white;
+	border-radius: 50%;
+}
+#subVM{
+	height: 50px;
+	width: 50px;
+	font-size: 40px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: #800000;
+	color: white;
+	border-radius: 50%;
+}
+#inner2 table{
+	padding: 50px 50px 20px;
+	overflow: hidden;
+	table-layout: fixed;
+}
+#inner2 thead{
+	padding: 10px;
+}
+#inner2 table td{
+	padding: 10px;
+	text-align: center;
+	word-wrap:break-word
+}
+#inner2 input{
+	padding: 5px;
+}
+
+#addSub{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 50px 20px;
+}
+
+button[name='addToVMs']{
+	margin: 20px auto;
+	width: 150px;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	border-radius: 10px;
 }

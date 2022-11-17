@@ -35,6 +35,10 @@ if(!isset($_SESSION['email'])){
 			<button onclick="addNodes()">Add Node</button>
 			<button onclick="addVMs()">Add VM</button>
 		</div>
+		<div class="test">
+
+			<a href="test.php?building=<?=$_GET['building']?>">Test</a>
+		</div>
 		<div id="bottom">
 			<img src="images/employee_image.jfif">
 			<div id="welcome">
@@ -309,7 +313,7 @@ if(!isset($_SESSION['email'])){
 			tb4.innerHTML = Math.round(usedDisk*100/totalDisk)+'%'
 			let tb5 = document.createElement('td')
 			tb5.setAttribute('width','15%')
-			tb5.innerHTML = "Status"
+			tb5.innerHTML = "Good"
 			trr.appendChild(tb1)
 			trr.appendChild(tb10)
 			trr.appendChild(tb2)
@@ -462,15 +466,15 @@ if(!isset($_SESSION['email'])){
 			let newTbody = document.createElement('tbody')
 			let newTr1 = document.createElement('tr')
 			let newTd11 = document.createElement('td')
-			newTd11.innerHTML = "<?=$_GET['building'];?>"
+			newTd11.innerHTML = "Cluster Name"
 			let newTd12 = document.createElement('td')
-			newTd12.innerHTML = parseInt("<?=$totalHost;?>") + n
+			newTd12.innerHTML = "<?=$_GET['building'];?>"
 			newTr1.appendChild(newTd11)
 			newTr1.appendChild(newTd12)
 
 			let newTr2 = document.createElement('tr')
 			let newTd21 = document.createElement('td')
-			newTd21.innerHTML = "Cluster Name"
+			newTd21.innerHTML = "Total Nodes"
 			let newTd22 = document.createElement('td')
 			newTd22.innerHTML = parseInt("<?=$totalHost;?>") + n
 			newTr2.appendChild(newTd21)
