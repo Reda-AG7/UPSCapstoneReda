@@ -250,8 +250,8 @@ function addToVMs(){
 
 	}
 	let t = document.querySelector('.clusterInformationsUpdated')
-
-	t.children[1].children[3].lastChild.innerHTML = parseInt(totalHost) + cpus.length
+	console.log("cpus.length"+cpus.length)
+	t.children[1].children[3].lastChild.innerHTML = totalVMs + cpus.length
 
 	totalCPUsAllocated += totCpus
 	t.children[1].children[4].lastChild.innerHTML = Math.round(totalCPUsAllocated*100/totalCPUsAvailable)+'%'
@@ -418,7 +418,12 @@ function checkStatus(){
 }
 
 function exportEXCEL(){
-	var table2excel = new Table2Excel();
-	table2excel.export(document.querySelectorAll("#vms"));
+	// var table2excel = new Table2Excel();
+	// table2excel.export(document.querySelectorAll("#vms"));
+
+}
+function exportPDF(){
+	// var table2excel = new Table2Excel();
+	// table2excel.export(document.querySelectorAll("#vms"));
 
 }
