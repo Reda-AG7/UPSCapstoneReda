@@ -56,3 +56,26 @@ function isInUpsDomain($email){
 	$part = explode("@",$email);
 	return ($part[1] == "ups.com")?true:false;
 }
+
+
+
+function getAllVMs($conn){
+	$arr = array();
+	$sql = "SELECT `clusterName`, `totalMemory`, `totalHost` FROM `cluster`;";
+	$result = mysqli_query($conn,$sql);
+	while($row = mysqli_fetch_assoc($result)){
+		$cluster = $row['clusterName'];
+		$totalHost = intval($row['totalHost']);
+		$totalMemory = intval($row['totalMemory']);
+		$type = ($totalMemory/$totalHost == 560)? "Large" : "Small";
+		$totalDisk = ($type == "Large") ? 18000*$totalHost:15000*$totalHost;
+		$usedDisk = 0;
+		$sql2 = "SELECT `diskSpace` FROM `server` WHERE parentCluster='$cluster'";
+		$result2 = mysqli_query($conn,$sql2);
+		while($row2 = mysqli_fetch_assoc($result2)){
+			$usedDisk += intval($row2['diskSpace']);
+		}
+		array_push($arr,[$usedDisk,$totalDisk]);
+	}
+	return json_encode($arr);
+}

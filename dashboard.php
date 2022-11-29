@@ -15,12 +15,15 @@ if(!isset($_SESSION['email'])){
 </head>
 <script type="text/javascript">
 	var x = 0;
+	var newVMs = {};
 </script>
 <body>
 	<?php 
 		include_once "includes/db_inc.php";
 		include_once "includes/functions_inc.php"; 
 		$data = getData($conn);
+		$vms = getAllVMs($conn);
+
 	?>
 	<div class="infos">
 		<div id="infos_top">
@@ -34,11 +37,24 @@ if(!isset($_SESSION['email'])){
 			<h2>Dashboard</h2>
 			</a>
 		</div>
-		<!-- <div class="newTask">
-			<img src="images/bolt2.png">
-			<h2>Start a New Task</h2>
-			<button><img src="images/arrowDown.png"></button>
-		</div> -->
+		<div class="addItems">
+			<button onclick="addVMstoAll()">Add VMs to All Clusters</button>
+		</div>
+		<div class="resourcesMax">
+			<h2>Recources max</h2>
+			<div>
+				<label>CPU %:</label>
+				<input type="number" name="cpuMax" id="cpuMax" placeholder="100" required>
+			</div>
+			<div>
+				<label>Memory %:</label>
+				<input type="number" name="memoryMax" id="memoryMax" placeholder="100" required>
+			</div>
+			<div>
+				<label>Disk %:</label>
+				<input type="number" name="diskMax" id="diskMax" placeholder="70" required>
+			</div>
+		</div>
 		<div id="bottom">
 			<img src="images/employee_image.jfif">
 			<div id="welcome">
@@ -57,10 +73,17 @@ if(!isset($_SESSION['email'])){
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript">
 		data = JSON.parse('<?= $data;?>');
+		vms = JSON.parse('<?= $vms;?>');
+		console.log(vms)
 		let size = Object.keys(data).length;
 		let counter = 0;
+		var cpuMaxDefault;var memoryMaxDefault;var diskMaxDefault;
+		// localStorage.setItem('cpuMaxDefault',cpuMaxDefault);
+		// localStorage.setItem('memoryMaxDefault',memoryMaxDefault);
+		// localStorage.setItem('diskMaxDefault',diskMaxDefault);
 		//console.log(data);
 		let parent = document.querySelector('.container');
 		parent.children[0].children[1].innerHTML = Object.keys(data)[0];
@@ -166,7 +189,7 @@ if(!isset($_SESSION['email'])){
 			parent.children[0].children[1].innerHTML = Object.keys(data)[o];
 			x = o
 		}
-
+		changeMaxResources(cpuMaxDefault,memoryMaxDefault,diskMaxDefault)
 	</script>
 </body>
 </html>

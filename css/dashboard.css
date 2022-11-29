@@ -190,36 +190,175 @@ h1{
 	background-color: #8b685f;
 }
 
-/*.newTask{
+.addItems{
 	display: flex;
-	flex-direction: row;
-	color: white;
+	flex-direction: column;
 	position: absolute;
 	top: 234px;
 	left: 0;
 	right: 0;
-	padding: 20px;
-	border-bottom: 1px solid white;
 }
-
-.newTask img{
-	height: 30px;
-	width: 30px;
+.addItems button{
 	background-color: inherit;
-}
-.newTask  h2{
-	margin-left: 40px;
-}
-.newTask button, .newTask button img{
-	height: 20px;
-	width: 30px;
-	background-color: inherit;
-	outline: none;
-	border-radius: 50%;
+	color: white;
+	height: 70px;
 	border: none;
 	cursor: pointer;
-	margin-left: 20px;
+	outline: none;
+	border-bottom: 1px solid #e3e3e3;
+	font-weight: 700 ;
 }
-.newTask:hover{
+.addItems button:hover{
 	background-color: #8b685f;
-}*/
+}
+.father{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+#inner2{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: auto;
+	transform: translate(-50%,-50%);
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+}
+#inner2 h1{
+	margin: 40px auto;
+	border-left: 5px solid black;
+	padding: 5px 10px;
+	font-size: 22px;
+	background-color: #FAD02C;
+}
+#close{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 25px;
+	border: none;
+	outline: none;
+	background: none;
+	color: #676767;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+#close:hover{
+	color: black;
+}
+#addVM{
+	height: 50px;
+	width: 50px;
+	font-size: 35px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: #FAD02C;
+	color: white;
+	border-radius: 50%;
+}
+#subVM{
+	height: 50px;
+	width: 50px;
+	font-size: 40px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: #800000;
+	color: white;
+	border-radius: 50%;
+}
+#inner2 table{
+	padding: 50px 50px 20px;
+	overflow: hidden;
+	table-layout: fixed;
+}
+#inner2 thead{
+	padding: 10px;
+}
+#inner2 table td{
+	padding: 10px;
+	text-align: center;
+	word-wrap:break-word
+}
+#inner2 input{
+	padding: 5px;
+}
+
+#addSub{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 50px 20px;
+}
+
+button[name='addToVMs']{
+	margin: 20px auto;
+	width: 150px;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	border-radius: 10px;
+}
+
+.resourcesMax{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 304px;
+	left: 0;
+	right: 0;
+	color: white;
+	padding: 20px 0;
+}
+.resourcesMax div{
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	justify-content:center;
+	align-items: center;
+}
+.resourcesMax:hover{
+	background-color: #8b685f;
+}
+.resourcesMax h2{
+	margin: 10px auto;
+	color: #ffbe00;
+}
+.resourcesMax label{
+	width: 120px;
+}
+.resourcesMax input{
+	padding: 5px;
+	width: 100px;
+}
+
+.father2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+#inner22{
+	position: relative;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+}
+#inner22 h1{
+	margin: 40px auto;
+	border-left: 5px solid black;
+	padding: 5px 10px;
+	font-size: 22px;
+	background-color: #FAD02C;
+}
